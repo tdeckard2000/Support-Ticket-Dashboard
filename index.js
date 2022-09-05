@@ -54,16 +54,7 @@ app.listen(process.env.PORT || port, () => {
 
 // Feeble™ Database
 
-const exampleEvents = [
-  {
-    _id: 74,
-    domain: 'Maintenance',
-    subDomain: 'Sub A',
-    owners: [],
-    description: 'This event is most important of all events.',
-    downtimeEvent: false
-  }
-]
+const exampleEvents = []
 
 const exampleDomains = [
   {

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, isDevMode } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 
@@ -28,32 +28,33 @@ export interface IPeople {
 export class HttpService {
 
   public events$: BehaviorSubject<IEvent[]> = new BehaviorSubject([] as IEvent[]);
+  public port = isDevMode()? 'http://localhost:3000' : '';
 
   constructor( private http:HttpClient) { }
 
   public getEvents():Observable<IEvent[]> {
-      this.http.get<any>('http://localhost:3000/api/events/').subscribe((res) => {
+      this.http.get<any>(this.port + '/api/events/').subscribe((res) => {
       this.events$.next(res);
     });
     return this.events$.asObservable();
   }
 
   public getDomains():Observable<IDomain[]> {
-    return this.http.get<any>('http://localhost:3000/api/events/domains');
+    return this.http.get<any>(this.port + '/api/events/domains');
   }
 
   public getPeople():Observable<IPeople[]> {
-    return this.http.get<any>('http://localhost:3000/api/people');
+    return this.http.get<any>(this.port + '/api/people');
   }
 
   public createEvent(newEvent:IEvent) {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    return this.http.post<any>('http://localhost:3000/api/', newEvent, {headers: headers});
+    return this.http.post<any>(this.port + '/api/', newEvent, {headers: headers});
   }
 
   public closeEvent(eventId: number) {
-    return this.http.patch<any>('http://localhost:3000/api/events/' + eventId, {});
+    return this.http.patch<any>(this.port + '/api/events/' + eventId, {});
   }
 
 }
