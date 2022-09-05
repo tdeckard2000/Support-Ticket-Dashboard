@@ -1,0 +1,52 @@
+<form [formGroup]="formGroup">
+  <div class="main-container">
+  <div class="dropdown-container">
+    <div class="input-title">Domain</div>
+    <select formControlName="domain" name="domain" id="domain-select">
+      <option *ngFor="let domain of (domains$ | async)" value="{{domain.name}}">{{domain.name}}</option>
+    </select>
+  </div>
+
+  <div class="dropdown-container">
+    <div class="input-title">Sub-Domain</div>
+    <select formControlName="subDomain" name="sub-domain" id="sub-domain">
+      <option *ngFor="let sub of (subDomains$ | async)" value="{{sub}}">{{sub}}</option>
+    </select>
+  </div>
+
+  <div class="dropdown-container">
+    <div class="input-title">Owners</div>
+    <select formControlName="owners" name="owners" id="owners">
+      <option *ngFor="let person of (peopleDropdownList$ | async)" value="{{person._id}}"> {{person.first + ' ' + person.last}}</option>
+    </select>
+    <div class="owner-icons-container">
+      <span (click)="onRemovePerson(person)" *ngFor="let person of peopleSelected" class="owner-icon">
+        <span class="owner-name">{{person.first | slice:0:1 | uppercase}}{{person.last | slice:0:1 | uppercase}}</span>
+      </span>
+    </div>
+  </div>
+
+  <div class="text-area-container">
+    <div class="input-title">Description</div>
+    <textarea formControlName="description" class="text-area" name="" id="" cols="30" rows="10"></textarea>
+  </div>
+
+  <div class="downtime-toggle-container">
+    <span>Downtime Event</span>
+    <span class="downtime-toggle">
+      <span [ngStyle]="{'background-color': downtimeEvent? '#b5e4ac':'#00a300'}"
+      (click)="onDowntimeEvent()" class="toggle-no">No</span>
+      <span [ngStyle]="{'background-color': downtimeEvent? '#ff000c':'#ffb5b7'}"
+      (click)="onDowntimeEvent()" class="toggle-yes">Yes</span>
+    </span>
+  </div>
+
+</div>
+
+<div class="bottom-container">
+  <button class="button-cancel" (click)="onCancel()">Cancel</button>
+  <button type="submit" [ngStyle]="{'background-color': downtimeEvent? '#ff000c':'#00a300', 'opacity': formGroup.valid && !savingEvent? '1':'.5'}"
+  (click)="onCreate()" [disabled]="!formGroup.valid || savingEvent" [innerHTML]="savingEvent ? 'saving..' : 'Create'"></button>
+</div>
+
+</form>

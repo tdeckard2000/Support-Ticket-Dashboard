@@ -1,0 +1,11 @@
+<div class="navbar-main-container" [ngClass]="{'active-downtime-event': activeDowntimeEvent}">
+  <div class="navbar-button-container">
+    <div class="alert-icon-container">
+      <img [ngClass]="{'hidden': !activeDowntimeEvent}" class="alert-icon" src="../../assets/images/alert-icon.png" alt="">
+    </div>
+    <button (click)="onExportModal()">Export</button>
+    <button (click)="onEventModal()">New Event</button>
+    <button (click)="onListModal()"><img class="list-icon" src="../../assets/images/list-icon.png" alt=""></button>
+    <img class="info-icon" src="../../assets/images/info-icon.png" alt="">
+  </div>
+</div>

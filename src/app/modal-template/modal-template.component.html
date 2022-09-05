@@ -1,0 +1,13 @@
+<div #backdrop *ngIf="this.displayModal" class="modal-backdrop">
+  <div [ngStyle]="{'background-color': backgroundColor}" class="modal-main-container">
+    <div *ngIf="!hideModalTitle" class="modal-title">
+      {{modalTitle}}
+      <img (click)="onCloseModal()" class="close-icon" src="../../assets/images/close-icon.png" alt="">
+    </div>
+    <div class="modal-content-container">
+      <!-- ng-container prevents premature initialization of child component -->
+      <ng-container [ngTemplateOutlet]="childComponent"></ng-container>
+    </div>
+  </div>
+</div>
+

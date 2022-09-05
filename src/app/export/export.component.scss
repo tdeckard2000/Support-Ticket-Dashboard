@@ -1,0 +1,16 @@
+@keyframes rotating {
+
+  from {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-4deg);
+  }
+  to {
+    transform: rotate(4deg);
+  }
+  }
+
+  .rotating:hover {
+    animation: rotating 3s linear infinite alternate;
+  }

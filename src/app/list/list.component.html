@@ -1,0 +1,75 @@
+<div class="main-container">
+  <div class="header-row">
+    <div class="list-item">
+      <div class="column-title">Maintenance</div>
+    </div>
+    <div class="list-item">
+      <div class="column-title">Production</div>
+    </div>
+    <div class="list-item">
+      <div class="column-title">Software</div>
+    </div>
+    <div class="list-item">
+      <div class="column-title">Electrical</div>
+    </div>
+    <div class="list-item">
+      <div class="column-title">Mechanical</div>
+    </div>
+  </div>
+  <div class="list-rows">
+    <div class="list-column">
+      <div (click)="onItemClick(event._id)" class="list-item clickable" [ngClass]="{'downtime-event': event.downtimeEvent}" *ngFor="let event of maintenanceEvents">
+        <div class="list-item-content">
+          <div class="text-subdomain">{{event.subDomain}}</div>
+          <div class="text-assigned">{{event.owners?.length}} Assigned</div>
+          <div class="text-description">{{event.description.length > 25? (event.description | slice:0:25)+'..' : event.description}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-column">
+
+      <div (click)="onItemClick(event._id)" class="list-item clickable" [ngClass]="{'downtime-event': event.downtimeEvent}" *ngFor="let event of productionEvents">
+        <div class="list-item-content">
+          <div class="text-subdomain">{{event.subDomain}}</div>
+          <div class="text-assigned">{{event.owners?.length}} Assigned</div>
+          <div class="text-description">{{event.description.length > 25? (event.description | slice:0:25)+'..' : event.description}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-column">
+
+      <div (click)="onItemClick(event._id)" class="list-item clickable" [ngClass]="{'downtime-event': event.downtimeEvent}" *ngFor="let event of softwareEvents">
+        <div class="list-item-content">
+          <div class="text-subdomain">{{event.subDomain}}</div>
+          <div class="text-assigned">{{event.owners?.length}} Assigned</div>
+          <div class="text-description">{{event.description.length > 25? (event.description | slice:0:25)+'..' : event.description}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-column">
+
+      <div (click)="onItemClick(event._id)" class="list-item clickable" [ngClass]="{'downtime-event': event.downtimeEvent}" *ngFor="let event of electricalEvents">
+        <div class="list-item-content">
+          <div class="text-subdomain">{{event.subDomain}}</div>
+          <div class="text-assigned">{{event.owners?.length}} Assigned</div>
+          <div class="text-description">{{event.description.length > 25? (event.description | slice:0:25)+'..' : event.description}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-column">
+
+      <div (click)="onItemClick(event._id)" class="list-item clickable" [ngClass]="{'downtime-event': event.downtimeEvent}" *ngFor="let event of mechanicalEvents">
+        <div class="list-item-content">
+          <div class="text-subdomain">{{event.subDomain}}</div>
+          <div class="text-assigned">{{event.owners?.length}} Assigned</div>
+          <div class="text-description">{{event.description.length > 25? (event.description | slice:0:25)+'..' : event.description}}</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

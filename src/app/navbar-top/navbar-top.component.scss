@@ -1,0 +1,71 @@
+.alert-icon-container {
+  display: flex;
+  margin: auto;
+  width: 25px;
+
+  .alert-icon {
+    filter: invert(16%) sepia(94%) saturate(7500%) hue-rotate(356deg) brightness(101%) contrast(114%);
+    height: 25px;
+    margin: auto;
+    margin-top: 2px;
+  }
+}
+
+
+.active-downtime-event {
+  border-bottom: 3px solid red;
+}
+
+.hidden {
+  //using this rather than *ngIf to leave element in DOM
+  display: none;
+}
+
+.info-icon {
+  filter: contrast(0.2);
+  height: 15px;
+  margin: auto;
+}
+
+.navbar-main-container {
+  background-color: white;
+  height: 40px;
+}
+
+.navbar-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: inherit;
+  margin-left: auto;
+  margin-right: 8px;
+  width: 240px;
+
+  button {
+    background-color: #0071ff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    height: 25px;
+    margin: auto;
+
+    .list-icon {
+      display: flex;
+      filter: invert(1);
+      height: 20px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: #0060d6;
+    }
+  }
+
+  i {
+    height: 25px;
+    margin: auto;
+    text-align: center;
+    width: 20px;
+  }
+}
