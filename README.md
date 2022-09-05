@@ -1,10 +1,16 @@
 # Diamond
 
-- Step 1: Install Node (if needed) here https://nodejs.org/en/download/
-- Step 2: Navigate to project folder in terminal.
-- Step 3: Install project packages using this command: npm i
-- Step 4: Start server using this command: npm run server
-- Step 5: Build and serve Angular project using this command: npm run start
-- Step 6: Navigate to this address in your browser: http://localhost:4200/
+View the app here
+https://diamondage.herokuapp.com/
 
-Please let me know if you have any questions :)
+Find it on GitHub here
+https://github.com/tdeckard2000/Angular-UI
+
+Or run locally..
+- Step 1: Install Node (if needed) here https://nodejs.org/en/download/
+- Step 2: Open terminal and navigate to the app directory (where index.js is located)
+- Step 3: Install express with: npm i express
+- Step 4: Start server with: npm run start
+- Finish: View the app in your browser at localhost:3000
+
+Let me know if you have any questions :)

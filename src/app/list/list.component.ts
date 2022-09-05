@@ -29,9 +29,7 @@ export class ListComponent implements OnInit {
   }
 
   onItemClick(eventId: number) {
-    console.log(eventId)
     this.httpService.closeEvent(eventId).subscribe(res => {
-      console.log(res)
       this.httpService.getEvents();
     })
   }

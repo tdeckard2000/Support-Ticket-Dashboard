@@ -9,7 +9,6 @@ app.use(cors());
 app.use(express.static(__dirname + '/dist/diamond'));
 
 app.get('/', function(req,res) {
-    console.log("HERE")
   res.sendFile(path.join(__dirname+'/dist/diamond/index.html'));
   });
 
@@ -27,7 +26,6 @@ app.get('/api/people', (req, res) => {
 
 app.post('/api/', (req, res) => {
   exampleEvents.push(req.body);
-  console.log(exampleEvents)
   setTimeout(() => {
     // Simulate DB request wait
     res.json({successful: 'true'})
@@ -50,7 +48,7 @@ app.patch('/api/events/:id', (req, res) => {
 })
 
 app.listen(process.env.PORT || port, () => {
-  console.log(`Listening on port ${port}`)
+  console.warn(`Listening on port ${port}`)
 })
 
 

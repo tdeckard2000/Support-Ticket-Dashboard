@@ -7,7 +7,6 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "server": "node index.js",
     "heroku-postbuild": "ng build"
   },
   "private": true,
