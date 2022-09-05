@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node .src/app/index.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "server": "node ./src/app/index.js"
+    "server": "node ./src/app/index.js",
+    "heroku-postbuild": "ng build"
   },
   "private": true,
   "dependencies": {
@@ -23,6 +24,7 @@
     "express": "^4.18.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
+    "typescript": "~4.6.2",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
@@ -38,5 +40,9 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
     "typescript": "~4.6.2"
+  },
+  "engines": {
+    "node": "18.2.0",
+    "npm": "8.9.0"
   }
 }

@@ -6,6 +6,12 @@ const port = 3000;
 
 app.use(bodyParser.json({extended: true}));
 app.use(cors());
+app.use(express.static(__dirname + '/dist/diamond'));
+
+app.get('/', function(req,res) {
+    console.log("HERE")
+  res.sendFile(path.join(__dirname+'/dist/diamond/index.html'));
+  });
 
 app.get('/api/events/', (req, res) => {
   res.send(exampleEvents)
