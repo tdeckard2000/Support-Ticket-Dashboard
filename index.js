@@ -69,41 +69,41 @@ const exampleDomains = [
   {
     name: 'Maintenance',
     subDomains: [
-      'Sub Phoenix-A',
-      'Sub Phoenix-B',
-      'Sub Phoenix-C'
+      'Sub Maintain-A',
+      'Sub Maintain-B',
+      'Sub Maintain-C'
     ]
   },
   {
     name: 'Production',
     subDomains: [
-      'Sub Bill-A',
-      'Sub Bill-B',
-      'Sub Bill-C'
+      'Sub Prod-A',
+      'Sub Prod-B',
+      'Sub Prod-C'
     ]
   },
   {
     name: 'Software',
     subDomains: [
-      'Sub SLC-A',
-      'Sub SLC-B',
-      'Sub SLC-C'
+      'Sub Bug-A',
+      'Sub Unexpected-B',
+      'Sub Feature-C'
     ]
   },
   {
     name: 'Electrical',
     subDomains: [
-      'Sub Indianapolis-A',
-      'Sub Indianapolis-B',
-      'Sub Indianapolis-C'
+      'Sub Switch-A',
+      'Sub Switch-B',
+      'Sub Switch-C'
     ]
   },
   {
     name: 'Mechanical',
     subDomains: [
-      'Sub Z-A',
-      'Sub Z-B',
-      'Sub Z-C'
+      'Sub Gear-A',
+      'Sub Gear-B',
+      'Sub Gear-C'
     ]
   }
 ]

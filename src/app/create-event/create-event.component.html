@@ -43,10 +43,9 @@
 
 </div>
 
-<div class="bottom-container">
-  <button class="button-cancel" (click)="onCancel()">Cancel</button>
-  <button type="submit" [ngStyle]="{'background-color': downtimeEvent? '#ff000c':'#00a300', 'opacity': formGroup.valid && !savingEvent? '1':'.5'}"
-  (click)="onCreate()" [disabled]="!formGroup.valid || savingEvent" [innerHTML]="savingEvent ? 'saving..' : 'Create'"></button>
-</div>
-
+  <div class="bottom-container">
+    <button class="button-cancel" (click)="onCancel()">Cancel</button>
+    <button type="submit" [ngStyle]="{'background-color': downtimeEvent? '#ff000c':'#00a300', 'opacity': formGroup.valid && !savingEvent? '1':'.5'}"
+    (click)="onCreate()" [disabled]="!formGroup.valid || savingEvent" [innerHTML]="savingEvent ? 'saving..' : 'Create'"></button>
+  </div>
 </form>

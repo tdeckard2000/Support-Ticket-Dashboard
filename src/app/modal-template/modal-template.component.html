@@ -5,7 +5,6 @@
       <img (click)="onCloseModal()" class="close-icon" src="../../assets/images/close-icon.png" alt="">
     </div>
     <div class="modal-content-container">
-      <!-- ng-container prevents premature initialization of child component -->
       <ng-container [ngTemplateOutlet]="childComponent"></ng-container>
     </div>
   </div>

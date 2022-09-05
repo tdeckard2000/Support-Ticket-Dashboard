@@ -1,8 +1,8 @@
-import { AfterContentInit, AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
-import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { HttpService, IDomain, IEvent, IPeople } from '../services/http.service';
 import { ModalService } from '../services/modal.service';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-create-event',
@@ -99,16 +99,9 @@ export class CreateEventComponent implements OnInit, OnDestroy {
       if(res) {
         this.savingEvent = false;
         this.httpService.getEvents();
-        this.resetForm();
+        this.modalService.closeModal('event');
       }
     })
-  }
-
-  resetForm() {
-    this.downtimeEvent = false;
-    this.formGroup.reset();
-    this.peopleDropdownList$.next(this._people);
-    this.peopleSelected = [];
   }
 
   ngOnDestroy() {

@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { NavbarTopComponent } from './navbar-top/navbar-top.component';
 import { NavbarLeftComponent } from './navbar-left/navbar-left.component';
-import { MainComponent } from './main/main.component';
 import { ModalTemplateComponent } from './modal-template/modal-template.component';
 import { CreateEventComponent } from './create-event/create-event.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -17,7 +16,6 @@ import { ExportComponent } from './export/export.component';
     AppComponent,
     NavbarTopComponent,
     NavbarLeftComponent,
-    MainComponent,
     ModalTemplateComponent,
     CreateEventComponent,
     ListComponent,
