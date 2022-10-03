@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.static(__dirname + '/dist/diamond'));
 
 app.get('/', function(req,res) {
-  res.sendFile(path.join(__dirname+'/dist/diamond/index.html'));
+  res.sendFile(path.join(__dirname+'/dist/support-ticket-dashboard/index.html'));
   });
 
 app.get('/api/events/', (req, res) => {

@@ -37,7 +37,7 @@ export class CreateEventComponent implements OnInit, OnDestroy {
       domain: [null, Validators.required],
       subDomain: {value: null, disabled: true},
       owners: [null],
-      description: [null, Validators.required]
+      description: ['']
     })
 
     this.formGroup.get('domain')?.valueChanges.subscribe((selectedDomain) => {
@@ -92,7 +92,7 @@ export class CreateEventComponent implements OnInit, OnDestroy {
       domain: this.formGroup.value.domain,
       subDomain: this.formGroup.value.subDomain,
       owners: this.peopleSelected,
-      description: this.formGroup.value.description,
+      description: this.formGroup.value?.description,
       downtimeEvent: this.downtimeEvent
     }
     this.httpService.createEvent(newEvent).subscribe(res => {
